@@ -16,6 +16,25 @@ if randomGrid:
 else:
     grid = np.zeros((gridSize,gridSize))
 
+
+
+#Creates glider at given location, coordinates are top left of glider 3x3
+def createGlider(x,y,grid):
+        grid[x:x+3,y:y+3] = [[1, 0, 0],
+                             [0, 1, 1],
+                             [1, 1, 0]]
+        
+#Creates light weight spaceship at given location, coordinates are top left of ship 5x4
+def createLightWeightShip(x,y,grid):
+        grid[x:x+4,y:y+5] = [[0, 1, 0, 0, 1],
+                             [1, 0, 0, 0, 0],
+                             [1, 0, 0, 0, 1],
+                             [1, 1, 1, 1, 0]]
+
+        
+createGlider(10,10,grid)
+createLightWeightShip(50,10,grid)
+
 #Checks each individial coordinate
 def checkChange(miniGrid, value):
 
